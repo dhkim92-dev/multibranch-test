@@ -16,7 +16,7 @@ class LongCalculatorServiceTest : BehaviorSpec({
 
         When("더하기를 하면") {
             Then("더한 값이 반환된다.") {
-                longCalculatorService.plus(a, b) shouldBe 3L
+                longCalculatorService.plus(a, b) shouldBe 4L
             }
         }
 
