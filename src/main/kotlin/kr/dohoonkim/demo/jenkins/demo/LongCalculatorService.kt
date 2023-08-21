@@ -11,7 +11,7 @@ class LongCalculatorService {
     fun div(a : Long, b : Long) : Double {
         if(b == 0L) throw ArithmeticException("Can not divide by zero")
 
-        return a/(b as Double)
+        return a/(b.toDouble())
     }
     fun mul(a : Long, b : Long) = a * b
 

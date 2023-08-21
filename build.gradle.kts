@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "kr.dohoonkim.demo.jenkins"
-version = "0.0.1-SNAPSHOT"
+version = System.getenv("APP_VERSION")
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
@@ -23,6 +23,10 @@ dependencies {
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	testImplementation("io.kotest:kotest-runner-junit5:4.4.3")
+	testImplementation("io.kotest:kotest-assertions-core:4.4.3")
+	testImplementation("io.kotest:kotest-extensions-spring:4.4.3")
+	testImplementation("com.ninja-squad:springmockk:4.0.2")
 }
 
 tasks.withType<KotlinCompile> {
