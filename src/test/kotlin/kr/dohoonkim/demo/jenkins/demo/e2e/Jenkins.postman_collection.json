@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "6fbf2c2e-f00e-4f4b-a71d-83ee6ae10ba9",
+		"name": "Jenkins",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20431175"
+	},
+	"item": [
+		{
+			"name": "0이 아닌 두 정수의 덧셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"0이 아닌 두 정수의 덧셈\", () => {",
+							"    const data = pm.response.json()",
+							"    pm.expect(data).to.have.equals(-2)",
+							"    pm.expect(pm.response).to.have.status(200)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/plus?a=1&b=-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"plus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0이 아닌 두 정수의 뺄셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"0이 아닌 두 정수의 뺄셈\", () => {",
+							"    const data = pm.response.json()",
+							"    pm.expect(data).to.equals(4)",
+							"    pm.expect(pm.response).to.have.status(200)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/minus?a=1&b=-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"minus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0이 아닌 두 정수의 곱셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"0이 아닌 두 정수의 곱셈\", () => {",
+							"    const data = pm.response.json()",
+							"    pm.expect(data).to.equals(-3)",
+							"    pm.expect(pm.response).to.have.status(200)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/multiply?a=1&b=-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"multiply"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0이 아닌 두 정수의 나눗셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"0이 아닌 두 정수의 나눗셈\", () => {",
+							"    const data = pm.response.json()",
+							"    pm.expect(data).to.equals(1/-3.0)",
+							"    pm.expect(pm.response).to.have.status(200)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/div?a=1&b=-3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"div"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "-3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0으로 나누기",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"0으로 나누기\", () => {",
+							"    pm.expect(pm.response).to.have.status(500)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/div?a=1&b=0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"div"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "1"
+						},
+						{
+							"key": "b",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "소수의 덧셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"소수의 덧셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/plus?a=0.1&b=0.3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"plus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "0.1"
+						},
+						{
+							"key": "b",
+							"value": "0.3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "소수의 뺄셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"소수의 뺄셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/minus?a=0.1&b=0.3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"minus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "0.1"
+						},
+						{
+							"key": "b",
+							"value": "0.3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "소수의 곱셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"소수의 곱셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/multiply?a=0.1&b=0.3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"multiply"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "0.1"
+						},
+						{
+							"key": "b",
+							"value": "0.3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "소수의 나눗셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"소수의 나눗셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/div?a=0.1&b=0.3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"div"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "0.1"
+						},
+						{
+							"key": "b",
+							"value": "0.3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "문자 덧셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"문자의 덧셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/plus?a=\"a\"&b=\"b\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"plus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "\"a\""
+						},
+						{
+							"key": "b",
+							"value": "\"b\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "문자 뺄셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"문자의 뺄셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/minus?a=\"a\"&b=\"b\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"minus"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "\"a\""
+						},
+						{
+							"key": "b",
+							"value": "\"b\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "문자 곱셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"문자의 곱셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/multiply?a=\"a\"&b=\"b\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"multiply"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "\"a\""
+						},
+						{
+							"key": "b",
+							"value": "\"b\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "문자 나눗셈",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"문자의 나눗셈\", () => {",
+							"    pm.expect(pm.response).to.have.status(400)",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/long-calculator/div?a=\"a\"&b=\"b\"",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"long-calculator",
+						"div"
+					],
+					"query": [
+						{
+							"key": "a",
+							"value": "\"a\""
+						},
+						{
+							"key": "b",
+							"value": "\"b\""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
